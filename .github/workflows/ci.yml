@@ -28,3 +28,7 @@ jobs:
       - name: Executer les tests
         run: |
           python -m pytest -q
+      - name: Security - Audit dependencies
+        run: |
+          python -m pip install pip-audit
+          python -m pip_audit -r requirements.txt
